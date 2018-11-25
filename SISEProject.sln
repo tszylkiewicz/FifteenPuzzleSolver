@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "SISEProject", "SISEProject\SISEProject.pyproj", "{42E68A5E-DA6A-41A1-A885-0FE6543566DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42E68A5E-DA6A-41A1-A885-0FE6543566DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42E68A5E-DA6A-41A1-A885-0FE6543566DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {83C923AB-5318-47FC-A528-8A12987335EB}
+	EndGlobalSection
+EndGlobal

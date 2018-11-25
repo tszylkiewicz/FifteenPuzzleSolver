@@ -1,0 +1,66 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>42e68a5e-da6a-41a1-a885-0fe6543566dc</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>SISEProject.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>SISEProject</Name>
+    <RootNamespace>SISEProject</RootNamespace>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <CommandLineArguments>bfs DRLU 4x4_01_00002.txt 4x4_01_0001_bfs_rdul_sol.txt 4x4_01_0001_bfs_rdul_stats.txt</CommandLineArguments>
+    <EnableNativeCodeDebugging>True</EnableNativeCodeDebugging>
+    <InterpreterId>Global|PythonCore|3.6</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Base.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BFS.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DFS.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Direction.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FileManager.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="functions.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Hamming.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Manhattan.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SISEProject.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|PythonCore|3.6" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
