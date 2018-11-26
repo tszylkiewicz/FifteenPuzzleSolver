@@ -2,19 +2,18 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>42e68a5e-da6a-41a1-a885-0fe6543566dc</ProjectGuid>
+    <ProjectGuid>aed18f67-b7d5-4e0c-8fd6-216d514e63e1</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>SISEProject.py</StartupFile>
+    <StartupFile>FifteenPuzzleSolver.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>SISEProject</Name>
-    <RootNamespace>SISEProject</RootNamespace>
+    <Name>FifteenPuzzleSolver</Name>
+    <RootNamespace>FifteenPuzzleSolver</RootNamespace>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
-    <CommandLineArguments>bfs DRLU 4x4_01_00002.txt 4x4_01_0001_bfs_rdul_sol.txt 4x4_01_0001_bfs_rdul_stats.txt</CommandLineArguments>
-    <EnableNativeCodeDebugging>True</EnableNativeCodeDebugging>
-    <InterpreterId>Global|PythonCore|3.6</InterpreterId>
+    <CommandLineArguments>dfs RDUL damage.txt 4x4_01_0001_bfs_rdul_sol.txt 4x4_01_0001_bfs_rdul_stats.txt</CommandLineArguments>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,6 +36,7 @@
     <Compile Include="Direction.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="FifteenPuzzleSolver.py" />
     <Compile Include="FileManager.py">
       <SubType>Code</SubType>
     </Compile>
@@ -49,10 +49,6 @@
     <Compile Include="Manhattan.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="SISEProject.py" />
-  </ItemGroup>
-  <ItemGroup>
-    <InterpreterReference Include="Global|PythonCore|3.6" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

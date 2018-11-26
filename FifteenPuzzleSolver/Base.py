@@ -60,3 +60,4 @@ class Base:
         path += self.parent.getPath() + str(self.lastMove)
         return path
 
+

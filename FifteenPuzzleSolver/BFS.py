@@ -30,8 +30,6 @@ class BFS:
                 if(newState.state == self.target):
                     solvingTime = time() - startTime
                     return newState.getPath(), len(self.explored) + 1, len(self.explored) - self.frontier.qsize(), self.maxDepth, solvingTime
-                if(str(newState.state) in self.explored.keys()):
-                    continue
-                else:
+                if(str(newState.state) not in self.explored.keys()):
                     self.frontier.put(newState.state)
                     self.explored[str(newState.state)] = newState

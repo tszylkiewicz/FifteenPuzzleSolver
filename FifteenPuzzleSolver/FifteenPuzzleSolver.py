@@ -3,6 +3,8 @@ from FileManager import *
 from functions import *
 from BFS import *
 from DFS import *
+from Manhattan import *
+from Hamming import *
 
 if (len(argv) != 6):
     print('The number of arguments is incorrect')
@@ -32,8 +34,10 @@ elif(strategyName == 'astr'):
     print(strategyName)
     if(strategyParameter == 'hamm'):
         print(strategyParameter)
+        solver = Hamming(file.array, solution) 
     elif(strategyParameter == 'manh'):
         print(strategyParameter)
+        solver = Manhattan(file.array, solution)         
     else:
         print('Invalid strategy parameter')
         exit()

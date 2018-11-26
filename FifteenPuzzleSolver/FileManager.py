@@ -19,12 +19,12 @@ class FileManager:
 
         if((self.colNumber * self.rowNumber) != (len(self.array) * len(self.array[0]))):
             print('Invalid array size')
-            exit()
+            #exit()
         
         for line in self.array:
             if(len(line) != self.colNumber):
                 print('Invalid row size')
-                exit()
+                #exit()
 
     def writeSolution(self, solutionFilename, moves):
         solutionFile = open(solutionFilename, 'w')
@@ -40,3 +40,4 @@ class FileManager:
         infoFile.write(str(maxDepth) + '\n')
         infoFile.write(str(time) + '\n')
         infoFile.close()
+
