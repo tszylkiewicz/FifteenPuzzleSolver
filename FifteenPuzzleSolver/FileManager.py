@@ -19,17 +19,21 @@ class FileManager:
 
         if((self.colNumber * self.rowNumber) != (len(self.array) * len(self.array[0]))):
             print('Invalid array size')
-            #exit()
         
         for line in self.array:
             if(len(line) != self.colNumber):
+                print(len(line))
                 print('Invalid row size')
-                #exit()
 
     def writeSolution(self, solutionFilename, moves):
         solutionFile = open(solutionFilename, 'w')
         solutionFile.write(str(len(moves)) + '\n')
         solutionFile.write(moves)
+        solutionFile.close()
+
+    def writeNotFound(self, solutionFilename):
+        solutionFile = open(solutionFilename, 'w')
+        solutionFile.write(str(-1))
         solutionFile.close()
 
     def writeInfo(self, infoFilename, moves, visited, prcessed, maxDepth, time):

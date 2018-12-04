@@ -12,8 +12,9 @@
     <Name>FifteenPuzzleSolver</Name>
     <RootNamespace>FifteenPuzzleSolver</RootNamespace>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
-    <CommandLineArguments>dfs RDUL damage.txt 4x4_01_0001_bfs_rdul_sol.txt 4x4_01_0001_bfs_rdul_stats.txt</CommandLineArguments>
+    <CommandLineArguments>astr manh damage.txt 4x4_01_0001_bfs_rdul_sol.txt 4x4_01_0001_bfs_rdul_stats.txt</CommandLineArguments>
     <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
+    <InterpreterId>Global|ContinuumAnalytics|Anaconda36-64</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -24,6 +25,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AStar.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Base.py">
       <SubType>Code</SubType>
     </Compile>
@@ -40,15 +44,9 @@
     <Compile Include="FileManager.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="functions.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Hamming.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Manhattan.py">
-      <SubType>Code</SubType>
-    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|ContinuumAnalytics|Anaconda36-64" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

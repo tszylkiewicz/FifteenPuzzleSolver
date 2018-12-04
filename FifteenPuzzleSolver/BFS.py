@@ -10,7 +10,7 @@ class BFS:
 
     def __init__(self, start, target, strategy):
         self.target = target
-        self.start = Base(None, start, Direction(1), 0)
+        self.start = Base(None, start, Direction(5), 0)
         self.strategy = strategy
         self.maxDepth = 0
         if(self.start.state != self.target):
@@ -20,16 +20,30 @@ class BFS:
     def solve(self):
         startTime = time()
         while(self.frontier.qsize() > 0):
-            self.currentState = self.frontier.get()
-            self.currentState = self.explored[str(self.currentState)]
-            moves = self.currentState.getOrderedMoves(self.strategy)
+            currentState = self.frontier.get()
+            currentStateString = currentState.__str__() 
+            currentState = self.explored[currentStateString]
+            moves = currentState.getOrderedMoves(self.strategy)
             for move in moves:
-                newState = Base(self.currentState, self.currentState.move(move), move, self.currentState.pathCost + 1)
-                if(newState.pathCost > self.maxDepth):
-                    self.maxDepth = newState.pathCost
-                if(newState.state == self.target):
-                    solvingTime = time() - startTime
-                    return newState.getPath(), len(self.explored) + 1, len(self.explored) - self.frontier.qsize(), self.maxDepth, solvingTime
-                if(str(newState.state) not in self.explored.keys()):
-                    self.frontier.put(newState.state)
-                    self.explored[str(newState.state)] = newState
+                newArray = currentState.move(move)  
+                newCost = currentState.pathCost + 1
+                newMove = move
+                newState = Base(currentState, newArray, newMove, newCost)
+                newStateString = newArray.__str__()
+                if(newStateString not in self.explored):
+                    self.frontier.put(newArray)
+                    self.explored[newStateString] = newState
+                    if(newCost > self.maxDepth):
+                        self.maxDepth = newCost
+                    if(newArray == self.target):
+                        solvingTime = time() - startTime
+                        solved = round(solvingTime, 3)
+                        path = newState.getPath()
+                        explored = (len(self.explored) + 1)
+                        frontier = len(self.explored) - self.frontier._qsize()
+                        return path, explored, frontier, self.maxDepth, solved
+        solvingTime = time() - startTime
+        solved = round(solvingTime, 3)
+        explored = (len(self.explored) + 1)
+        frontier = len(self.explored) - len(self.frontier)
+        return -1, explored, frontier, self.maxDepth + 1, solved

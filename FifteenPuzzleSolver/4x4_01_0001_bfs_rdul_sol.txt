@@ -1,2 +1,2 @@
-5
-DRDDR
+4
+DRRD

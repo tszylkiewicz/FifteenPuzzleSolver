@@ -5,6 +5,7 @@ class Direction(Enum):
     D = 2   #down
     L = 3   #left
     R = 4   #right
+    N = 5
 
     def __str__(self):
         return(self.name)

@@ -10,8 +10,8 @@ class Base:
         self.pathCost = pathCost
 
     def move(self, move):
-        x, y = self.getBlankPosition()
         array = copy.deepcopy(self.state)
+        x, y = self.getBlankPosition()
         if(move == Direction(1)):
             array[x][y], array[x - 1][y] = array[x - 1][y], array[x][y]
         if(move == Direction(2)):
@@ -34,13 +34,13 @@ class Base:
         rows = len(self.state)
         cols = len(self.state[0])
         moves = []
-        if(x > 0):
+        if(x > 0 and self.lastMove != Direction(2)):
             moves.append(Direction(1))
-        if(x < rows - 1):
+        if((x < (rows - 1)) and self.lastMove != Direction(1)):
             moves.append(Direction(2))
-        if(y > 0):
+        if(y > 0 and self.lastMove != Direction(4)):
             moves.append(Direction(3))
-        if(y < cols - 1):
+        if((y < (cols - 1)) and self.lastMove != Direction(3)):
             moves.append(Direction(4))
         return moves
 
