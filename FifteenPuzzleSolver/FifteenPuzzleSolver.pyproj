@@ -12,7 +12,7 @@
     <Name>FifteenPuzzleSolver</Name>
     <RootNamespace>FifteenPuzzleSolver</RootNamespace>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
-    <CommandLineArguments>astr manh damage.txt 4x4_01_0001_bfs_rdul_sol.txt 4x4_01_0001_bfs_rdul_stats.txt</CommandLineArguments>
+    <CommandLineArguments>dfs RDUL 4x4_01_00002.txt 4x4_01_0001_bfs_rdul_sol.txt 4x4_01_0001_bfs_rdul_stats.txt</CommandLineArguments>
     <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
     <InterpreterId>Global|ContinuumAnalytics|Anaconda36-64</InterpreterId>
   </PropertyGroup>

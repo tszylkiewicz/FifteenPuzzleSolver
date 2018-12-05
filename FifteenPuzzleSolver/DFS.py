@@ -41,6 +41,8 @@ class DFS:
                             path = newState.getPath()
                             explored = (len(self.explored) + 1)
                             frontier = len(self.explored) - len(self.frontier)
+                            if(newCost < self.maxDepth):
+                                self.maxDepth = newCost
                             return path, explored, frontier, self.maxDepth, solved                               
                     if(newStateString in self.explored):
                         oldCost = self.explored[newStateString].pathCost                                       
