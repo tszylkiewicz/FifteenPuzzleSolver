@@ -12,6 +12,7 @@ class DFS:
         self.start = Base(None, start, Direction(5), 0)
         self.strategy = strategy
         self.maxDepth = 19
+        self.DepthToFile = 0
         if(self.start.state != self.target):
             self.frontier.append(self.start.state)
             self.explored[str(self.start.state)] = self.start
@@ -35,15 +36,15 @@ class DFS:
                     if(newStateString not in self.explored):
                         self.frontier.append(newArray)
                         self.explored[newStateString] = newState
+                        if(newCost > self.DepthToFile):
+                            self.DepthToFile = newCost
                         if(newArray == self.target):
                             solvingTime = time() - startTime
                             solved = round(solvingTime, 3)
                             path = newState.getPath()
                             explored = (len(self.explored) + 1)
                             frontier = len(self.explored) - len(self.frontier)
-                            if(newCost < self.maxDepth):
-                                self.maxDepth = newCost
-                            return path, explored, frontier, self.maxDepth, solved                               
+                            return path, explored, frontier, self.DepthToFile, solved                               
                     if(newStateString in self.explored):
                         oldCost = self.explored[newStateString].pathCost                                       
                         if (newCost < oldCost):
