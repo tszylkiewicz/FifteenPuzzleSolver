@@ -54,5 +54,5 @@ class DFS:
         solved = round(solvingTime, 3)
         explored = (len(self.explored) + 1)
         frontier = len(self.explored) - len(self.frontier)
-        return -1, explored, frontier, self.maxDepth + 1, solved
+        return -1, explored, frontier, self.DepthToFile + 1, solved
 
